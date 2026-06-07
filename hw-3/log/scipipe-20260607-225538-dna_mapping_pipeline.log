@@ -1,0 +1,16 @@
+AUDIT   2026/06/07 22:55:38 [Workflow:dna_mapping_pipeline] Starting workflow (Writing log to log/scipipe-20260607-225538-dna_mapping_pipeline.log)
+AUDIT   2026/06/07 22:55:38 [Task:bwa_align] Executing: bwa mem /home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/ncbi_dataset/data/GCF_000005845.2/GCF_000005845.2_ASM584v2_genomic.fna /home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/SRR39029116_1.fastq /home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/SRR39029116_2.fastq > sample.sam
+AUDIT   2026/06/07 22:58:41 [Task:bwa_align] Finished: bwa mem /home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/ncbi_dataset/data/GCF_000005845.2/GCF_000005845.2_ASM584v2_genomic.fna /home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/SRR39029116_1.fastq /home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/SRR39029116_2.fastq > sample.sam
+AUDIT   2026/06/07 22:58:41 [Task:sam_to_bam] Executing: samtools view -bS ../sample.sam > sample.bam
+AUDIT   2026/06/07 22:58:59 [Task:sam_to_bam] Finished: samtools view -bS ../sample.sam > sample.bam
+AUDIT   2026/06/07 22:58:59 [Task:samtools_flagstat] Output file already exists, so skipping: flagstat.txt
+AUDIT   2026/06/07 22:58:59 [Task:parse_flagstat] Executing: /home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/parse_flagstat.sh ../flagstat.txt ../sample.bam sample.passed.bam > verdict.txt
+ERROR   2026/06/07 22:58:59 [Task:parse_flagstat] Command failed!
+Command:
+/home/kirill/BIOINFORMATICS-1/bioinformatics-1/hw-3/parse_flagstat.sh ../flagstat.txt ../sample.bam sample.passed.bam > verdict.txt
+
+Output:
+
+Original error:exit status 1
+
+

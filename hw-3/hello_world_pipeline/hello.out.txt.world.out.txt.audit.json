@@ -1,0 +1,29 @@
+{
+    "ID": "dr6c3jgiervwwqjqe4wc",
+    "ProcessName": "world",
+    "Command": "echo $(cat ../hello.out.txt) World \u003e hello.out.txt.world.out.txt",
+    "Params": {},
+    "Tags": {},
+    "StartTime": "2026-06-07T22:38:16.765815036+07:00",
+    "FinishTime": "2026-06-07T22:38:16.771555339+07:00",
+    "ExecTimeNS": 5740301,
+    "OutFiles": {
+        "out": "hello.out.txt.world.out.txt"
+    },
+    "Upstream": {
+        "hello.out.txt": {
+            "ID": "7ervx2tr79ilkwvtagrj",
+            "ProcessName": "hello",
+            "Command": "echo 'Hello ' \u003e hello.out.txt",
+            "Params": {},
+            "Tags": {},
+            "StartTime": "2026-06-07T22:38:16.760373766+07:00",
+            "FinishTime": "2026-06-07T22:38:16.764950068+07:00",
+            "ExecTimeNS": 4576289,
+            "OutFiles": {
+                "out": "hello.out.txt"
+            },
+            "Upstream": {}
+        }
+    }
+}

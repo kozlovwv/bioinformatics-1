@@ -1,0 +1,6 @@
+AUDIT   2026/06/07 22:38:16 [Workflow:hello_world] Starting workflow (Writing log to log/scipipe-20260607-223816-hello_world.log)
+AUDIT   2026/06/07 22:38:16 [Task:hello] Executing: echo 'Hello ' > hello.out.txt
+AUDIT   2026/06/07 22:38:16 [Task:hello] Finished: echo 'Hello ' > hello.out.txt
+AUDIT   2026/06/07 22:38:16 [Task:world] Executing: echo $(cat ../hello.out.txt) World > hello.out.txt.world.out.txt
+AUDIT   2026/06/07 22:38:16 [Task:world] Finished: echo $(cat ../hello.out.txt) World > hello.out.txt.world.out.txt
+AUDIT   2026/06/07 22:38:16 [Workflow:hello_world] Finished workflow (Log written to log/scipipe-20260607-223816-hello_world.log)

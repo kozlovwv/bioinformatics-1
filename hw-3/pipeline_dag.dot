@@ -1,0 +1,18 @@
+digraph "dna_mapping_pipeline" {
+  rankdir=LR;
+  graph [fontname="Arial",fontsize=13,color="#384A52",fontcolor="#384A52"];
+  node  [fontname="Arial",fontsize=11,color="#384A52",fontcolor="#384A52",fillcolor="#EFF2F5",shape=box,style=filled];
+  edge  [fontname="Arial",fontsize=9, color="#384A52",fontcolor="#384A52"];
+  "bwa_align" [shape=box];
+  "freebayes" [shape=box];
+  "parse_flagstat" [shape=box];
+  "sam_to_bam" [shape=box];
+  "samtools_flagstat" [shape=box];
+  "samtools_sort" [shape=box];
+  "bwa_align" -> "sam_to_bam" [taillabel="sam", headlabel="sam"];
+  "parse_flagstat" -> "samtools_sort" [taillabel="passed_bam", headlabel="passed_bam"];
+  "sam_to_bam" -> "samtools_flagstat" [taillabel="bam", headlabel="bam"];
+  "sam_to_bam" -> "parse_flagstat" [taillabel="bam", headlabel="bam"];
+  "samtools_flagstat" -> "parse_flagstat" [taillabel="txt", headlabel="txt"];
+  "samtools_sort" -> "freebayes" [taillabel="sorted_bam", headlabel="sorted_bam"];
+}
